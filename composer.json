@@ -1,0 +1,64 @@
+{
+    "name": "lsnepomuceno/laravel-simple-ddd",
+    "description": "Create and manage A Domain Driven Design (DDD) in your Laravel app,  simply and efficiently.",
+    "license": "MIT",
+    "type": "library",
+    "homepage": "https://github.com/lsnepomuceno/laravel-simple-ddd",
+    "support": {
+        "issues": "https://github.com/lsnepomuceno/laravel-simple-ddd/issues",
+        "source": "https://github.com/lsnepomuceno/laravel-simple-ddd"
+    },
+    "keywords": [
+        "laravel",
+        "ddd",
+        "simple ddd"
+    ],
+    "authors": [
+        {
+            "name": "Lucas Nepomuceno",
+            "email": "lsn.nepomuceno@gmail.com",
+            "homepage": "https://github.com/lsnepomuceno"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-gd": "*",
+        "ext-json": "*",
+        "ext-fileinfo": "*",
+        "ext-mbstring": "*",
+        "illuminate/support": "^9",
+        "illuminate/console": "^9",
+        "illuminate/routing": "^9"
+    },
+    "autoload": {
+        "psr-4": {
+            "LSNepomuceno\\LaravelSimpleDdd\\": "./src"
+        },
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LSNepomuceno\\LaravelSimpleDdd\\Tests\\": "./tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LSNepomuceno\\LaravelSimpleDdd\\LaravelSimpleDddServiceProvider"
+            ]
+        }
+    },
+    "suggest": {
+        "lsnepomuceno/laravel-a1-pdf-sign": "Sign PDF files with valid x509 certificates."
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7",
+        "nunomaduro/collision": "^6",
+        "phpmd/phpmd": "^2.11"
+    }
+}
