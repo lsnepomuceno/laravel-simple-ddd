@@ -3,11 +3,11 @@
 namespace LSNepomuceno\LaravelSimpleDdd;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 use ReflectionClass;
 use ReflectionException;
-use Symfony\Component\Finder\Finder;
 
 class LaravelSimpleDddServiceProvider extends ServiceProvider
 {
@@ -16,10 +16,6 @@ class LaravelSimpleDddServiceProvider extends ServiceProvider
         //
     }
 
-
-    /**
-     * @throws ReflectionException
-     */
     public function boot(): void
     {
         if ($this->app->runningInConsole()) {
@@ -29,25 +25,16 @@ class LaravelSimpleDddServiceProvider extends ServiceProvider
         }
     }
 
-    /**
-     * @throws ReflectionException
-     */
-    protected function autoLoadCommands($paths): array
+    protected function autoLoadCommands(string $path): array
     {
-        $paths = array_unique(Arr::wrap($paths));
-
-        $paths = array_filter($paths, function ($path) {
-            return is_dir($path);
-        });
-
-        if (empty($paths)) {
+        if (empty($path)) {
             return [];
         }
 
         $namespace = __NAMESPACE__ . '\Commands\\';
         $commands = [];
 
-        foreach ((new Finder)->in($paths)->files() as $command) {
+        foreach (File::allFiles($path) as $command) {
             $command = $namespace . str_replace(
                     ['/', '.php'],
                     ['\\', ''],
@@ -60,7 +47,7 @@ class LaravelSimpleDddServiceProvider extends ServiceProvider
                     $commands[] = $command;
                 }
             } catch (ReflectionException $e) {
-                throw new $e;
+                Log::error("There was an error registering the command {$command}: {$e->getMessage()}");;
             }
         }
 
