@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\CastMakeCommand;
+use Illuminate\Foundation\Console\EventMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainCastCommand extends CastMakeCommand
+class MakeDomainEventCommand extends EventMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:cast';
+    protected $name = 'domain:make:event';
 
-    protected $description = 'Create a new domain custom Eloquent cast class';
+    protected $description = 'Create a new domain event class';
 
-    protected $type = 'Casts';
+    protected $type = 'Events';
 }

@@ -35,11 +35,7 @@ class LaravelSimpleDddServiceProvider extends ServiceProvider
         $commands = [];
 
         foreach (File::allFiles($path) as $command) {
-            $command = $namespace . str_replace(
-                    ['/', '.php'],
-                    ['\\', ''],
-                    $command->getFilename()
-                );
+            $command = $namespace . str_replace(['/', '.php'], ['\\', ''], $command->getFilename());
 
             try {
                 if (is_subclass_of($command, Command::class) &&

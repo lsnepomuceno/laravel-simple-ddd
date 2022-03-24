@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\RequestMakeCommand;
+use Illuminate\Foundation\Console\ConsoleMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainRequestCommand extends RequestMakeCommand
+class MakeDomainConsoleCommand extends ConsoleMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:request';
+    protected $name = 'domain:make:command';
 
-    protected $description = 'Create a new domain request class';
+    protected $description = 'Create a new domain Artisan command';
 
-    protected $type = 'Requests';
+    protected $type = 'Commands';
 }

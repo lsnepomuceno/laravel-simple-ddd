@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\RequestMakeCommand;
+use Illuminate\Foundation\Console\ChannelMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainRequestCommand extends RequestMakeCommand
+class MakeDomainChannelCommand extends ChannelMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:request';
+    protected $name = 'domain:make:channel';
 
-    protected $description = 'Create a new domain request class';
+    protected $description = 'Create a new domain channel class';
 
-    protected $type = 'Requests';
+    protected $type = 'Channels';
 }

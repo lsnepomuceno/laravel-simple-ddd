@@ -26,9 +26,10 @@
         "ext-json": "*",
         "ext-fileinfo": "*",
         "ext-mbstring": "*",
-        "illuminate/support": "^9",
-        "illuminate/console": "^9",
-        "illuminate/routing": "^9"
+        "illuminate/support": "^8|^9",
+        "illuminate/console": "^8|^9",
+        "illuminate/routing": "^8|^9",
+        "illuminate/foundation": "^8|^9"
     },
     "autoload": {
         "psr-4": {

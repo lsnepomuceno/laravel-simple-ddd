@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\EventMakeCommand;
+use Illuminate\Foundation\Console\NotificationMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainEventCommand extends EventMakeCommand
+class MakeDomainNotificationCommand extends NotificationMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:event';
+    protected $name = 'domain:make:notification';
 
-    protected $description = 'Create a new domain event class';
+    protected $description = 'Create a new domain notification class';
 
-    protected $type = 'Events';
+    protected $type = 'Notifications';
 }

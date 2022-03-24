@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\ModelMakeCommand;
+use Illuminate\Foundation\Console\RequestMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainModelCommand extends ModelMakeCommand
+class MakeDomainRequestCommand extends RequestMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:model';
+    protected $name = 'domain:make:request';
 
-    protected $description = 'Create a new domain Eloquent model class';
+    protected $description = 'Create a new domain request class';
 
-    protected $type = 'Models';
+    protected $type = 'Requests';
 }

@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\ListenerMakeCommand;
+use Illuminate\Foundation\Console\MailMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainListenerCommand extends ListenerMakeCommand
+class MakeDomainMailCommand extends MailMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:listener';
+    protected $name = 'domain:make:mail';
 
-    protected $description = 'Create a new domain listener class';
+    protected $description = 'Create a new domain email class';
 
-    protected $type = 'Listeners';
+    protected $type = 'Mails';
 }

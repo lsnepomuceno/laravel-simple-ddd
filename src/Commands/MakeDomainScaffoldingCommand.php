@@ -20,7 +20,7 @@ class MakeDomainScaffoldingCommand extends Command
 
     public function handle(): int
     {
-        $domainName = $this->formatDomainNameDir($this->argument(key: 'domainName'));
+        $domainName = formatDomainNameDir($this->argument(key: 'domainName'));
         $this->baseDomainDirName = app_path("Domain/{$domainName}");
 
         if (File::exists($this->baseDomainDirName)) {
@@ -28,16 +28,6 @@ class MakeDomainScaffoldingCommand extends Command
         }
 
         return $this->createDirectoryAndChildren();
-    }
-
-    private function formatDomainNameDir(string $domainName): string
-    {
-        $domainName = str_replace('\\', '/', $domainName);
-        $directories = explode('/', $domainName);
-
-        return collect($directories)
-            ->map(fn($dir) => Str::studly($dir))
-            ->join('/');
     }
 
     private function askIfItIsToDeleteTheDirectory(): void
@@ -59,18 +49,14 @@ class MakeDomainScaffoldingCommand extends Command
     private function createDirectoryAndChildren(): int
     {
         if (File::makeDirectory($this->baseDomainDirName)) {
-
             foreach ($this->children as $child) {
                 File::makeDirectory("{$this->baseDomainDirName}/{$child}");
             }
-
             $this->info('Domain created successfully');
-
             return self::SUCCESS;
         }
 
         $this->error('Unable to create the given domain, please try again.');
-
         return self::FAILURE;
     }
 }

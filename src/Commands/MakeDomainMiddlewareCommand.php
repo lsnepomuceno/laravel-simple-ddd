@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\MailMakeCommand;
+use Illuminate\Routing\Console\MiddlewareMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainMailCommand extends MailMakeCommand
+class MakeDomainMiddlewareCommand extends MiddlewareMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:mail';
+    protected $name = 'domain:make:middleware';
 
-    protected $description = 'Create a new domain email class';
+    protected $description = 'Create a new domain middleware class';
 
-    protected $type = 'Mails';
+    protected $type = 'Middleware';
 }

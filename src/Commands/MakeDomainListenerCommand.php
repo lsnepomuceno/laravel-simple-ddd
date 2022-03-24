@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\JobMakeCommand;
+use Illuminate\Foundation\Console\ListenerMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainJobCommand extends JobMakeCommand
+class MakeDomainListenerCommand extends ListenerMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:job';
+    protected $name = 'domain:make:listener';
 
-    protected $description = 'Create a new domain job class';
+    protected $description = 'Create a new domain listener class';
 
-    protected $type = 'Jobs';
+    protected $type = 'Listeners';
 }

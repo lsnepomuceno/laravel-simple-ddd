@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\ChannelMakeCommand;
+use Illuminate\Foundation\Console\CastMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainChannelCommand extends ChannelMakeCommand
+class MakeDomainCastCommand extends CastMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:channel';
+    protected $name = 'domain:make:cast';
 
-    protected $description = 'Create a new domain channel class';
+    protected $description = 'Create a new domain custom Eloquent cast class';
 
-    protected $type = 'Channels';
+    protected $type = 'Casts';
 }

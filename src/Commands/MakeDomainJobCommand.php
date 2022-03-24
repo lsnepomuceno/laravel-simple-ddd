@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\EventMakeCommand;
+use Illuminate\Foundation\Console\JobMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainEventCommand extends EventMakeCommand
+class MakeDomainJobCommand extends JobMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:event';
+    protected $name = 'domain:make:job';
 
-    protected $description = 'Create a new domain event class';
+    protected $description = 'Create a new domain job class';
 
-    protected $type = 'Events';
+    protected $type = 'Jobs';
 }

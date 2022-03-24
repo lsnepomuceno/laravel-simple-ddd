@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\ModelMakeCommand;
+use Illuminate\Foundation\Console\ExceptionMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainModelCommand extends ModelMakeCommand
+class MakeDomainExceptionCommand extends ExceptionMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:model';
+    protected $name = 'domain:make:exception';
 
-    protected $description = 'Create a new domain Eloquent model class';
+    protected $description = 'Create a new domain custom exception class';
 
-    protected $type = 'Models';
+    protected $type = 'Exceptions';
 }
