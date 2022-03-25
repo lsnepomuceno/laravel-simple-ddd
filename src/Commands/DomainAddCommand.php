@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
-class MakeDomainScaffoldingCommand extends Command
+class DomainAddCommand extends Command
 {
     protected $signature = 'domain:add
                                     {domainName : The name of the domain folder}

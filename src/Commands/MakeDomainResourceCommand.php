@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\ProviderMakeCommand;
+use Illuminate\Foundation\Console\ResourceMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainProviderCommand extends ProviderMakeCommand
+class MakeDomainResourceCommand extends ResourceMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:provider';
+    protected $name = 'domain:make:resource';
 
-    protected $description = 'Create a new domain service provider class';
+    protected $description = 'Create a new domain resource class';
 
-    protected $type = 'Providers';
+    protected $type = 'Resources';
 }

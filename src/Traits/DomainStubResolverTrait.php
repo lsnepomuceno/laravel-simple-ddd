@@ -2,20 +2,18 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Traits;
 
-use Symfony\Component\Console\Input\InputOption;
-
-trait DomainDefaultSettingsTrait
+trait DomainStubResolverTrait
 {
-    protected function getDefaultNamespace($rootNamespace): string
+    protected function getStub(): string
     {
-        $domain = formatDomainNameDir($this->option('domain'));
-        return "{$rootNamespace}\Domain\\{$domain}\\{$this->type}";
+        return $this->resolveStubPath("/Stubs/{$this->stub}.stub");
     }
 
-    protected function getOptions(): array
+    protected function resolveStubPath($stub): string
     {
-        $options = parent::getOptions() ?? [];
-        $options[] = ['domain', null, InputOption::VALUE_REQUIRED, 'Manually specify the domain.'];
-        return $options;
+        $customPath = $this->laravel->basePath(trim($stub, '/'));
+        return file_exists($customPath)
+            ? $customPath
+            : dirname(__DIR__) . $stub;
     }
 }

@@ -2,7 +2,10 @@
 
 namespace {{ namespace }};
 
-trait {{ class }}
+class {{ class }}
 {
-    //
+    public function execute()
+    {
+        // Use this method to perform the action
+    }
 }

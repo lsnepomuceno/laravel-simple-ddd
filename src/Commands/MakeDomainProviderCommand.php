@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\PolicyMakeCommand;
+use Illuminate\Foundation\Console\ProviderMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainPolicyCommand extends PolicyMakeCommand
+class MakeDomainProviderCommand extends ProviderMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:policy';
+    protected $name = 'domain:make:provider';
 
-    protected $description = 'Create a new domain policy class';
+    protected $description = 'Create a new domain service provider class';
 
-    protected $type = 'Policies';
+    protected $type = 'Providers';
 }

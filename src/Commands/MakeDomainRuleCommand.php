@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\ResourceMakeCommand;
+use Illuminate\Foundation\Console\RuleMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainResourceCommand extends ResourceMakeCommand
+class MakeDomainRuleCommand extends RuleMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:resource';
+    protected $name = 'domain:make:rule';
 
-    protected $description = 'Create a new domain resource class';
+    protected $description = 'Create a new domain validation rule';
 
-    protected $type = 'Resources';
+    protected $type = 'Rules';
 }

@@ -22,14 +22,12 @@
     ],
     "require": {
         "php": "^8.1",
-        "ext-gd": "*",
         "ext-json": "*",
         "ext-fileinfo": "*",
         "ext-mbstring": "*",
         "illuminate/support": "^8|^9",
         "illuminate/console": "^8|^9",
-        "illuminate/routing": "^8|^9",
-        "illuminate/foundation": "^8|^9"
+        "illuminate/routing": "^8|^9"
     },
     "autoload": {
         "psr-4": {

@@ -2,16 +2,19 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\RuleMakeCommand;
+use Illuminate\Console\GeneratorCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
+use LSNepomuceno\LaravelSimpleDdd\Traits\DomainStubResolverTrait;
 
-class MakeDomainRuleCommand extends RuleMakeCommand
+class MakeDomainTraitCommand extends GeneratorCommand
 {
-    use DomainDefaultSettingsTrait;
+    use DomainDefaultSettingsTrait, DomainStubResolverTrait;
 
-    protected $name = 'domain:make:rule';
+    protected $name = 'domain:make:trait';
 
-    protected $description = 'Create a new domain validation rule';
+    protected $description = 'Create a new domain trait';
 
-    protected $type = 'Rules';
+    protected $type = 'Traits';
+
+    protected string $stub = 'trait';
 }

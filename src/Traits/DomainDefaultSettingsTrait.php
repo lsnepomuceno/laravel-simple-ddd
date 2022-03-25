@@ -2,7 +2,6 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Traits;
 
-use Illuminate\Support\Str;
 use Symfony\Component\Console\Input\InputOption;
 
 trait DomainDefaultSettingsTrait

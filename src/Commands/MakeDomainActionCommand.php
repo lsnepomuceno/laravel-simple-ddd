@@ -4,27 +4,17 @@ namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
 use Illuminate\Console\GeneratorCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
+use LSNepomuceno\LaravelSimpleDdd\Traits\DomainStubResolverTrait;
 
-class MakeDomainTraitCommand extends GeneratorCommand
+class MakeDomainActionCommand extends GeneratorCommand
 {
-    use DomainDefaultSettingsTrait;
+    use DomainDefaultSettingsTrait, DomainStubResolverTrait;
 
-    protected $name = 'domain:make:trait';
+    protected $name = 'domain:make:action';
 
-    protected $description = 'Create a new domain trait';
+    protected $description = 'Create a new domain action';
 
-    protected $type = 'Traits';
+    protected $type = 'Actions';
 
-    protected function getStub(): string
-    {
-        return $this->resolveStubPath('/Stubs/trait.stub');
-    }
-
-    protected function resolveStubPath($stub): string
-    {
-        $customPath = $this->laravel->basePath(trim($stub, '/'));
-        return file_exists($customPath)
-            ? $customPath
-            : dirname(__DIR__) . $stub;
-    }
+    protected string $stub = 'action';
 }

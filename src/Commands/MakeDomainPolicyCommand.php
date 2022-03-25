@@ -2,16 +2,16 @@
 
 namespace LSNepomuceno\LaravelSimpleDdd\Commands;
 
-use Illuminate\Foundation\Console\RequestMakeCommand;
+use Illuminate\Foundation\Console\PolicyMakeCommand;
 use LSNepomuceno\LaravelSimpleDdd\Traits\DomainDefaultSettingsTrait;
 
-class MakeDomainRequestCommand extends RequestMakeCommand
+class MakeDomainPolicyCommand extends PolicyMakeCommand
 {
     use DomainDefaultSettingsTrait;
 
-    protected $name = 'domain:make:request';
+    protected $name = 'domain:make:policy';
 
-    protected $description = 'Create a new domain request class';
+    protected $description = 'Create a new domain policy class';
 
-    protected $type = 'Requests';
+    protected $type = 'Policies';
 }
